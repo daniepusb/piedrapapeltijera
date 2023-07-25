@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra 🪨 Papel 📄 o Tijera ✂️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="play.js"></script>
+
+</head>
+<body>
+    <div class="center">
+        <h1>PIEDRA 🪨 PAPEL 📄 o TIJERA ✂️</h1>
+    </div>
+    <div class="grid" id="reglas">
+        <div class="item reglas__del__juego">
+            <p>Estas son las reglas del juego:</p>
+            <li>Piedra aplasta Tijeras</li>
+            <li>Tijeras cortan Papel</li>
+            <li>Papel cubre Piedra</li>
+        </div>
+        <div class="item reglas__del__juego">
+            <input type="button" value="JUGAR" id="boton_jugar" onclick="console.log('jugar');jugar()">
+        </div>
+    </div>
+    <br>
+    <div class="grid" id="jugadores">
+        <div class="item jugador" id="bloque_jugador_a">
+            <h2>Jugador <label id="nombre_jugador_a">A</label></h2>
+            <div class="grid jugador__opciones" id="opciones_a">
+                <div class="item opciones">
+                    <label for="opcion">Piedra
+                        <input type="radio" name="eleccion__a" id="piedra" checked>
+                    </label>
+                    <label for="opcion">Papel
+                        <input type="radio" name="eleccion__a" id="papel">
+                    </label>
+                    <label for="opcion">Tijera
+                        <input type="radio" name="eleccion__a" id="tijera">
+                    </label>
+                </div>
+                <div class="item">
+                    <input type="button" value="Elegir" id="elegir_a" onclick="elegir('a');">
+                </div>
+                
+            </div>
+            <div class="mensaje__eleccion" id="eleccion_a">
+                Jugador A ha elegido ✅
+            </div>
+        </div>
+
+        <div class="item jugador" id="bloque_jugador_b">
+            <h2>Jugador <label id="nombre_jugador_b">B</label></h2>
+            <div class="grid jugador__opciones" id="opciones_b">
+                <div class="item opciones">
+                    <label for="opcion">Piedra
+                        <input type="radio" name="eleccion__b" id="piedra">
+                    </label>
+                    <label for="opcion">Papel
+                        <input type="radio" name="eleccion__b" id="papel" checked>
+                    </label>
+                    <label for="opcion">Tijera
+                        <input type="radio" name="eleccion__b" id="tijera">
+                    </label>
+                </div>
+                <div class="item">
+                    <input type="button" value="Elegir" id="elegir_b" onclick="elegir('b');">
+                </div>
+                
+            </div>
+            <div class="mensaje__eleccion"  id="eleccion_b"> 
+                Jugador B ha elegido ✅
+            </div>
+        </div>
+    </div>
+
+    <div class="center" id="resultado">
+        <input type="button" value="Ver ganador"  id="ver_ganador" onclick="calcular__ganador();">
+        <input type="button" value="Volver a jugar"  onclick="reiniciar__juego();">
+        <div id="ganador">El ganador es: <label for="" id="nombre_ganador">B</label></div>
+    </div>
+ </body>
+</html>

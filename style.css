@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+.center {text-align: center;}
+.grid {
+    display: grid;
+    grid-auto-columns: 50%;
+    grid-auto-flow: column;
+    column-gap: 15px;
+    
+    place-content: center;
+    place-items: center;
+}
+.grid.jugador__opciones {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-flow: dense;
+    border: 0;
+}
+.item {
+    border: 1px solid aquamarine;
+    background-color:rgb(226, 169, 226);
+}
+.item.reglas__del__juego {
+    background-color: black;
+    border: none;
+}
+.item.jugador {
+    text-align: center;
+}
+.item.opciones {
+    border:0;
+    display: table-cell;
+}
+.grid.jugador__opciones .item{
+    border:0;
+}
+.mensaje__eleccion {
+    display: none;
+    color: green;
+}
+input[type="button"] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    line-height: 2.5;
+    padding: 0 20px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+#jugadores, #resultado, #ganador, #reiniciar {
+    display: none;
+    margin-top: 30px;
+}
